@@ -1,12 +1,15 @@
-<li class="list-group-item">
-  <div>
+<li class="list-group-item my-1"
+    [ngClass]="{'list-group-item-success': postLoveIts > 0,
+                'list-group-item-danger': postLoveIts < 0}">
+  <div class="d-flex justify-content-between">
     <h2>{{ postTitle }}</h2>
-    <div>{{ postCreatedAt }}</div>
+    <p>{{ postCreatedAt | date: 'short' }}</p>
   </div>
   <p>{{ postContent }}</p>
   <div>
-    <button>Bouton1</button>
-    <button>Bouton2</button>
+    <button class="btn btn-success mr-2"
+            (click)="onMore()">Love it! ({{ postLoveIts }})</button>
+    <button class="btn btn-danger"
+            (click)="onLess()">Don't love it! ({{ postLoveIts }})</button>
   </div>
-
 </li>
