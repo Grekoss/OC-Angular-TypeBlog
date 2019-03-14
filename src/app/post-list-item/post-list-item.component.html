@@ -1,15 +1,23 @@
 <li class="list-group-item my-1"
-    [ngClass]="{'list-group-item-success': postLoveIts > 0,
-                'list-group-item-danger': postLoveIts < 0}">
-  <div class="d-flex justify-content-between">
-    <h2>{{ postTitle }}</h2>
-    <p>{{ postCreatedAt | date: 'short' }}</p>
-  </div>
-  <p>{{ postContent }}</p>
-  <div>
-    <button class="btn btn-success mr-2"
-            (click)="onMore()">Love it! ({{ postLoveIts }})</button>
-    <button class="btn btn-danger"
-            (click)="onLess()">Don't love it! ({{ postLoveIts }})</button>
-  </div>
+    [ngClass]="{'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts < 0}">
+    <div class="d-flex justify-content-between">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.createdAt | date: 'short' }}</p>
+    </div>
+    <p>{{ post.content }}</p>
+    <div class="d-flex justify-content-between">
+        <div>
+            <button class="btn btn-success mr-2"
+                    (click)="onMore(post)">Love it! ({{ post.loveIts }})</button>
+            <button class="btn btn-danger"
+                    (click)="onLess(post)">Don't love it! ({{ post.loveIts }})</button>
+        </div>
+        <div>
+            <button class="btn btn-default"
+                    (click)="onRemove(post)">
+                <fa-icon [icon]="faTrashAlt"></fa-icon>
+            </button>
+        </div>
+    </div>
 </li>

@@ -1,8 +1,12 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a routerLink="posts" routerLinkActive="active" class="nav-link">Liste des Posts</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="new" routerLinkActive="active" class="nav-link">Création d'un Post</a>
+  </li>
+</ul>
+
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>Mes posts</h1>
-        <app-post-list [posts]="posts"></app-post-list>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>

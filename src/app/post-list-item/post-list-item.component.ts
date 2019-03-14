@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import {PostsService} from '../services/posts.service';
+import {Post} from '../models/post.model';
 
 @Component({
   selector: 'app-post-list-item',
@@ -7,22 +10,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostListItemComponent implements OnInit {
 
-  @Input() postTitle: string;
-  @Input() postContent: string;
-  @Input() postLoveIts: number;
-  @Input() postCreatedAt: Date;
+  faTrashAlt = faTrashAlt;
 
-  constructor() { }
+  @Input() post: Post;
+
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
   }
 
-  onMore() {
-    this.postLoveIts ++;
+  onMore(post: Post) {
+    this.postsService.likePost(post);
   }
 
-  onLess() {
-    this.postLoveIts --;
+  onLess(post: Post) {
+    this.postsService.dontLikePost(post);
+  }
+
+  onRemove(post: Post) {
+      this.postsService.removePost(post);
   }
 
 }
