@@ -1,6 +1,5 @@
 export class Post {
 
-    id: number;
     createdAt: Date;
     loveIts: number;
     constructor(public title: string, public content: string) {

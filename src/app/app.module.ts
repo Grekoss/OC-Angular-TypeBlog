@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
@@ -10,6 +10,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 
 const appRoutes: Routes = [
   {path: 'posts', component: PostListComponent },
@@ -33,6 +37,7 @@ const appRoutes: Routes = [
     FontAwesomeModule
   ],
   providers: [
+    {provide: LOCALE_ID, useValue: 'fr'},
     PostsService,
   ],
   bootstrap: [AppComponent]

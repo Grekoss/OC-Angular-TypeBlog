@@ -11,28 +11,24 @@ export class PostsService {
 
   private posts: Post[] = [
     {
-      id: 0,
       title: 'Mon premier post',
       content: 'Lorem ipsum dolor sit amet. Accusamus adipisci aliquam asperiores cum error fugiat necessitatibus nihil quam.',
       loveIts: -1,
-      createdAt: new Date(),
+      createdAt: new Date(2018, 6, 23, 15, 3),
     },
     {
-      id: 1,
       title: 'Mon deuxième post',
       content: 'Error esse fugiat iste rem soluta tenetur veniam voluptatem! Eum, maxime, rem. Architecto excepturi iusto nemo quos.',
       loveIts: 0,
-      createdAt: new Date(),
+      createdAt: new Date(2017, 11, 25, 23, 30),
     },
     {
-      id: 2,
       title: 'Mon troisième post',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ea earum mollitia repellendus.',
       loveIts: 4,
-      createdAt: new Date(),
+      createdAt: new Date(2000, 8, 29, 10),
     },
     {
-      id: 3,
       title: 'Mon quatrième post',
       content: 'Lorem vide ;)',
       loveIts: 1,
