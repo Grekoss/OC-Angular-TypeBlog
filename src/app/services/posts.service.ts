@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Post} from '../models/post.model';
 import {Subject} from 'rxjs';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Injectable({
@@ -62,6 +62,16 @@ export class PostsService {
               this.posts = data.val() ? data.val() : [];
               this.emitPosts();
           });
+  }
+
+  formatDate(date: Date) {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+
+      return `${year}/${month}/${day} ${hours}:${minutes}`;
   }
 
 }

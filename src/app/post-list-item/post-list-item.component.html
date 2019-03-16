@@ -3,7 +3,7 @@
                 'list-group-item-danger': post.loveIts < 0}">
     <div class="d-flex justify-content-between">
     <h2>{{ post.title }}</h2>
-    <p>{{ post.createdAt | date: ['dd LLLL yyyy à hh:mm', locales] }}</p>
+    <p>{{ post.createdAt | date: 'dd LLLL yyyy à HH:mm' }}</p>
     </div>
     <p>{{ post.content }}</p>
     <div class="d-flex justify-content-between">
